@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PersonController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,6 @@ Route::get('/', [HomeController::class,'index'])->name('blog.index');
 Route::get('/single', [HomeController::class,'show'])->name('blog.single');
 Route::get('/about', [HomeController::class,'about'])->name('about');
 Route::get('/contact',  [HomeController::class,'contact'])->name('contact');
+
+
+Route::get('/person',  [PersonController::class,'index'])->name('person');
