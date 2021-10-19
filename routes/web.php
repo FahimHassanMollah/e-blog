@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CountryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PersonController;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,8 @@ Route::get('/contact',  [HomeController::class,'contact'])->name('contact');
 
 
 Route::get('/person',  [PersonController::class,'index'])->name('person');
+
+Route::get('/countries',[CountryController::class,'show'])->name('country.show');
+
+Route::get('/countries/create',[CountryController::class,'create'])->name('country.create');
+Route::post('/countries/create',[CountryController::class,'store'])->name('country.store');
