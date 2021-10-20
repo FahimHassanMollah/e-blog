@@ -15,15 +15,11 @@
 
 <body>
     <div class="container">
-        <h1>All country</h1>
-        <div>
-            <a href="{{ route('country.create') }}" class="btn btn-warning">Add Country</a>
-        </div>
-        {{-- {{ dd($country) }} --}}
+        {{-- <h1>{{ $country->name }} Deatils </h1> --}}
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+
                     <th scope="col">Name</th>
                     <th scope="col">Cpaital</th>
                     <th scope="col">currency</th>
@@ -34,9 +30,9 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($countries as $country)
+
                     <tr>
-                        <td>{{ $loop->index + 1 }}</td>
+
                         <td>
                             <a href="{{ route('country.details',['id'=>$country->id]) }}">{{ $country->name }}</a>
                         </td>
@@ -50,21 +46,15 @@
 
                                 <a href="{{ route('country.edit',['id' => $country->id]) }}" class="btn btn-success">Update</a>
 
-                                <form action="{{ route('country.delete',['id'=>$country->id]) }}" method="post">
-                                    @csrf
-                                    @method('delete')
-                                     <input type="submit" value="delete" class="btn btn-danger ms-1">
-                                </form>
 
+                                <a href="" class="btn btn-danger ms-1">Delete</a>
 
                             </div>
                         </td>
                     </tr>
-                @endforeach
 
             </tbody>
         </table>
-
     </div>
 
 
@@ -81,3 +71,4 @@
 </body>
 
 </html>
+
