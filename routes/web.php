@@ -3,6 +3,7 @@
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PersonController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,3 +58,10 @@ Route::get('/countries/create',[CountryController::class,'create'])->name('count
 Route::post('/countries/create',[CountryController::class,'store'])->name('country.store');
 
 Route::delete('/countries/{id}/delete',[CountryController::class,'destroy'])->name('country.delete');
+
+
+
+
+// user routes
+
+Route::get('/users/create',[UserController::class,'create'])->name('user.create');
