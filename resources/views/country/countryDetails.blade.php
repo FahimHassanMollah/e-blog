@@ -16,6 +16,7 @@
 <body>
     <div class="container">
         {{-- <h1>{{ $country->name }} Deatils </h1> --}}
+        {{ dd($country->persons) }}
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
