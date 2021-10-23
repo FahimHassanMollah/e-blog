@@ -47,6 +47,10 @@
             <h4>Profile Informations</h4>
 
             <div class="mb-3">
+                <label for="curency" class="form-label">Profile pic link</label>
+                <input type="text" name="profile_pic" class="form-control" id="curency">
+            </div>
+            <div class="mb-3">
                 <label for="curency" class="form-label">Bio</label>
                 <input type="text" name="bio" class="form-control" id="curency">
             </div>
@@ -66,6 +70,8 @@
 
 
             <button type="submit" class="btn btn-primary">Create user</button>
+            <br>
+            <br>
         </form>
     </div>
 

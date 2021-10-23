@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -41,7 +42,25 @@ class UserController extends Controller
         $user->user_name = $user_name;
 
 
+        $profile_pic = $request->input('profile_pic');
+        $bio = $request->input('bio');
+        $address = $request->input('address');
         $user->save();
+
+
+        $profile = new Profile();
+        $profile->profile_pic = $profile_pic;
+        $profile->bio = $bio;
+        $profile->address = $address;
+        ($res = $profile->users());
+      $profile->owner_id= $res;
+      dd($profile);
+
+
+
+
+        $profile->save();
+
         return redirect(route('user.create'));
     }
 }
