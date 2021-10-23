@@ -39,6 +39,10 @@
                 <label for="curency" class="form-label">date of birth</label>
                 <input type="datetime-local" name="date_of_birth" class="form-control" id="curency">
             </div>
+            <div class="mb-3">
+                <label for="curency" class="form-label">User Name</label>
+                <input type="text" name="user_name" class="form-control" id="curency">
+            </div>
             {{-- <div class="mb-3">
                <select name="country_id" id="" class="form-control">
                    @foreach($countries as $country)
