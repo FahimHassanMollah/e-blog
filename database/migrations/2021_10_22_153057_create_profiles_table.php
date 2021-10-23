@@ -19,6 +19,8 @@ class CreateProfilesTable extends Migration
             $table->string('profile_pic');
             $table->string('bio');
             $table->string('address');
+            $table->unsignedBigInteger('owner_id');
+            
             $table->timestamps();
 
         });

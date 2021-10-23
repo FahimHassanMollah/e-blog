@@ -20,7 +20,7 @@
             @csrf
             <div class="mb-3">
                 <label for="personName" class="form-label">First Name</label>
-                <input type="text" name="first_name" class="form-control" id="personName" >
+                <input type="text" name="first_name" class="form-control" id="personName">
 
             </div>
             <div class="mb-3">
@@ -43,9 +43,21 @@
                 <label for="curency" class="form-label">User Name</label>
                 <input type="text" name="user_name" class="form-control" id="curency">
             </div>
+            <hr>
+            <h4>Profile Informations</h4>
+
+            <div class="mb-3">
+                <label for="curency" class="form-label">Bio</label>
+                <input type="text" name="bio" class="form-control" id="curency">
+            </div>
+            <div class="mb-3">
+                <label for="curency" class="form-label">Address</label>
+                <input type="text" name="address" class="form-control" id="curency">
+            </div>
+
             {{-- <div class="mb-3">
                <select name="country_id" id="" class="form-control">
-                   @foreach($countries as $country)
+                   @foreach ($countries as $country)
                         <option value="{{ $country->id }}">{{ $country->name }}</option>
                    @endforeach
 

@@ -32,7 +32,7 @@
                     <th scope="col">User Name</th>
                     <th scope="col">updated on</th>
                     <th scope="col">created on</th>
-                    {{-- <th scope="col">Actions</th> --}}
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,10 +48,13 @@
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->phone }}</td>
 
-                        <td>{{ $user->date_of_birth->  }}</td>
+                        <td>{{ $user->date_of_birth->format('Y-m-d')  }}</td>
                         <td>{{ ($user->user_name) }}</td>
                         <td>{{ $user->created_at->diffForHumans() }}</td>
                         <td>{{ $user->updated_at->format('Y-m-d') }}</td>
+                        <td>
+                            <a class="btn btn-success" href="">Add profile</a>
+                        </td>
                         {{-- <td>
                             <div class="d-flex align-items-center justify-content-center">
 
