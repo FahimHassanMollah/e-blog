@@ -40,7 +40,7 @@ class UserController extends Controller
         $user->phone = $phone;
         $user->date_of_birth = $date_of_birth;
         $user->user_name = $user_name;
-
+        
 
         $profile_pic = $request->input('profile_pic');
         $bio = $request->input('bio');
@@ -49,17 +49,15 @@ class UserController extends Controller
 
 
         $profile = new Profile();
+        $profile->owner_id = $user->id;
         $profile->profile_pic = $profile_pic;
         $profile->bio = $bio;
         $profile->address = $address;
-        ($res = $profile->users());
-      $profile->owner_id= $res;
-      dd($profile);
-
-
-
-
         $profile->save();
+
+
+
+
 
         return redirect(route('user.create'));
     }

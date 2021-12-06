@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PersonController;
@@ -73,4 +74,10 @@ Route::post('/users/create',[UserController::class,'store'])->name('user.create'
 
 // profile
 
+Route::get('/users',[UserController::class,'index'])->name('users');
 
+
+
+// authors routes
+Route::get('/authors/create',[AuthorController::class,'create'])->name('author.create');
+Route::post('/authors/create',[AuthorController::class,'store'])->name('author.store');
