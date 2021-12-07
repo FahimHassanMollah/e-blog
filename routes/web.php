@@ -79,5 +79,6 @@ Route::get('/users',[UserController::class,'index'])->name('users');
 
 
 // authors routes
+Route::get('/authors/',[AuthorController::class,'index'])->name('author.index');
 Route::get('/authors/create',[AuthorController::class,'create'])->name('author.create');
 Route::post('/authors/create',[AuthorController::class,'store'])->name('author.store');
