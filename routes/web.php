@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PersonController;
@@ -82,3 +83,9 @@ Route::get('/users',[UserController::class,'index'])->name('users');
 Route::get('/authors/',[AuthorController::class,'index'])->name('author.index');
 Route::get('/authors/create',[AuthorController::class,'create'])->name('author.create');
 Route::post('/authors/create',[AuthorController::class,'store'])->name('author.store');
+
+
+// books routes
+Route::get('/books/',[BookController::class,'index'])->name('book.index');
+Route::get('/books/create',[BookController::class,'create'])->name('book.create');
+Route::post('/books/create',[BookController::class,'store'])->name('book.store');

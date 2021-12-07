@@ -9,4 +9,9 @@ class Author extends Model
 {
     use HasFactory;
     protected $guarded  = ['_token'];
+    
+    public function books()
+    {
+        return $this->belongsToMany(Book::class);
+    }
 }
