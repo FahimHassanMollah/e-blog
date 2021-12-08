@@ -29,6 +29,7 @@
                     <th scope="col">Description</th>
                     <th scope="col">Isbn</th>
                     <th scope="col">Authors</th>
+                    <th scope="col">Actions</th>
 
                 </tr>
             </thead>
@@ -48,6 +49,9 @@
                             @foreach ($book->authors  as $author)
                                   <p>  {{ $author->name }}</p>
                             @endforeach
+                        </td>
+                        <td>
+                            <a href="{{ route('book.edit',['id'=> $book->id]) }}"><button class="btn btn-warning">Edit</button></a>
                         </td>
 
 

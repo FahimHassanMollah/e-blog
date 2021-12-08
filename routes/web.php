@@ -87,5 +87,7 @@ Route::post('/authors/create',[AuthorController::class,'store'])->name('author.s
 
 // books routes
 Route::get('/books/',[BookController::class,'index'])->name('book.index');
+Route::get('/books/edit/{id}',[BookController::class,'edit'])->name('book.edit');
+Route::put('/books/edit/{id}',[BookController::class,'update'])->name('book.update');
 Route::get('/books/create',[BookController::class,'create'])->name('book.create');
-Route::post('/books/create',[BookController::class,'store'])->name('book.store');
+Route::post('/books/store',[BookController::class,'store'])->name('book.store');
