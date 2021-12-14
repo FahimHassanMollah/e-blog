@@ -16,35 +16,57 @@
 <body>
     <div class="container">
         <h1>create person</h1>
+        <div>
+
+            @if ($errors->any())
+
+                <div>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li  class="alert alert-danger">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                {{-- {{ dd($errors) }} --}}
+            @endif
+        </div>
         <form action="" method="post">
             @csrf
             <div class="mb-3">
                 <label for="personName" class="form-label">First Name</label>
-                <input type="text" name="first_name" class="form-control" id="personName">
+                <input type="text" name="first_name" value="{{ old('first_name') }}" class="form-control" id="personName">
 
             </div>
             <div class="mb-3">
                 <label for="capitalName" class="form-label">Last Name </label>
-                <input type="text" name="last_name" class="form-control" id="capitalName">
+                <input type="text" name="last_name" value="{{ old('last_name') }}" class="form-control" id="capitalName">
             </div>
             <div class="mb-3">
                 <label for="capitalName" class="form-label">email </label>
-                <input type="email" name="email" class="form-control" id="capitalName">
+                <input type="email" name="email" value="{{ old('email') }}" class="form-control" id="capitalName">
             </div>
             <div class="mb-3">
                 <label for="curency" class="form-label">Phone</label>
-                <input type="text" name="phone" class="form-control" id="curency">
+                <input type="text" name="phone" value="{{ old('phone') }}" class="form-control" id="curency">
             </div>
             <div class="mb-3">
                 <label for="curency" class="form-label">date of birth</label>
-                <input type="datetime-local" name="date_of_birth" class="form-control" id="curency">
+                <input type="datetime-local" name="date_of_birth" value="{{ old('date_of_birth') }}" class="form-control" id="curency">
             </div>
             <div class="mb-3">
                 <label for="curency" class="form-label">User Name</label>
-                <input type="text" name="user_name" class="form-control" id="curency">
+                <input type="text" name="user_name" value="{{ old('user_name') }}" class="form-control" id="curency">
+            </div>
+            <div class="mb-3">
+                <label for="curency" class="form-label">Password</label>
+                <input type="text" name="password"   class="form-control" id="curency">
+            </div>
+            <div class="mb-3">
+                <label for="curency" class="form-label">Confrim Password</label>
+                <input type="text" name="password_confirmation"  class="form-control" id="curency">
             </div>
             <hr>
-            <h4>Profile Informations</h4>
+            {{-- <h4>Profile Informations</h4>
 
             <div class="mb-3">
                 <label for="curency" class="form-label">Profile pic link</label>
@@ -57,7 +79,7 @@
             <div class="mb-3">
                 <label for="curency" class="form-label">Address</label>
                 <input type="text" name="address" class="form-control" id="curency">
-            </div>
+            </div> --}}
 
             {{-- <div class="mb-3">
                <select name="country_id" id="" class="form-control">
